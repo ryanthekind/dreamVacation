@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <title>Your Dream Vacation</title>
+</head>
+<body>
+    <div>What are your top 10 dream Vacations?</div>
+    
+
+        <input type="text" id="user_input"/>
+        <button type="button" id="add_vacation">Enter</button>
+        <div id="vacations"></div>
+
+    <!--
+    <p>Search below to find your entries:</p>
+        <input type="text" id="query"/>
+        <button type="button" id="search">Search</button>
+        <div id="searchResults">You searched for:</div>
+    -->
+        <script>
+        
+
+        const arr = [];
+        
+        const enterClicked = function(event) {
+            //console.log(event);
+            
+            const inputBox = document.getElementById('user_input');
+            console.log(inputBox.value);
+            arr.push(inputBox.value);
+            inputBox.value = "";
+    
+            
+            const listElement = document.getElementById("vacations");
+            listElement.innerHTML = arr.join("<br/>");
+            
+            
+        }
+            
+            document.getElementById('add_vacation').onclick = enterClicked;
+
+        const secondClick = function(event01) {
+        
+            const searchBox = document.getElementById("query");
+            console.log(searchBox.value); 
+            searchBox.value = "";
+
+        }
+        
+            document.getElementById("search").onclick = secondClick;
+
+            //let test = arr.find(secondClick);
+
+            //console.log(test);
+            
+        </script>
+     </body>
+</html>
